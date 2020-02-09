@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: dockerhub
+  labels:
+   app: ubuntu
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ubuntu-pod
+  template:
+    metadata:
+      labels:
+        app: ubuntu-pod
+    spec:
+      imagePullSecrets:
+       - name: umar09
+      containers:
+      - name: dockerhub
+        image: umar0890/apache2    

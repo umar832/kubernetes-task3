@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dockerhub
+spec:       
+  containers:
+    - name: dockherhub
+      image: umar0890/apache2
+  imagePullSecrets:
+    - name: umar09
